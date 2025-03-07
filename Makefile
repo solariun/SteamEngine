@@ -33,13 +33,20 @@ $(TARGET): $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^
 
 # Compile source files to object files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Ensure obj directory exists
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 # Clean up build artifacts
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	rm -f $(OBJ_DIR)/*.o $(BIN_DIR)/*
 
 # Default target
-all: clean $(TARGET)
+all: $(OBJ_DIR) $(BIN_DIR) clean $(TARGET)
+
+# Ensure bin directory exists
+$(BIN_DIR):
+	@mkdir -p $(BIN_DIR)
