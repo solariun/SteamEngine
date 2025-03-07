@@ -1,3 +1,11 @@
+/**
+ * @file SteamEngine.hpp
+ * @brief Contains the definition of the SteamEngine and SteamEngineContainer classes.
+ * 
+ * This file provides the implementation of a SteamEngine class that extends the StaticList class,
+ * allowing it to be automatically added to and removed from a list upon creation and destruction.
+ */
+
 #ifndef STEAMENGINE_HPP
 #define STEAMENGINE_HPP
 
@@ -10,15 +18,13 @@ namespace steamengine {
 
 class SteamEngineContainer : public StaticListContainer {
 public:
-    SteamEngineContainer() : StaticListContainer() {}
+    SteamEngineContainer();
 };
 
 class SteamEngine : public StaticList {
 public:
-    SteamEngine(StaticListContainer& container) : StaticList(container) {}
-    void print() const {
-        std::cout << "Engine ID: " << this << std::endl;
-    }
+    SteamEngine(StaticListContainer& container);
+    void print() const;
 };
 
 } // namespace steamengine

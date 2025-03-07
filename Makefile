@@ -1,3 +1,8 @@
+# Makefile for building the SteamEngine project
+# 
+# This Makefile compiles the source files and links them into a binary.
+# It also provides a clean target to remove build artifacts.
+
 # Compiler and linker
 CC = g++
 LD = g++

@@ -1,3 +1,11 @@
+/**
+ * @file main.cpp
+ * @brief Demonstrates the usage of the SteamEngine and SteamEngineContainer classes.
+ * 
+ * This file creates instances of the MyEngine class, which extends the SteamEngine class,
+ * and prints their IDs using a for-each loop.
+ */
+
 #include "SteamEngine.hpp"
 
 using namespace steamengine;
