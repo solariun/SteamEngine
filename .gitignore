@@ -7,4 +7,4 @@ bin/*
 obj/*
 
 # Ignore VSCode files
-.vscode/
+#.vscode/
